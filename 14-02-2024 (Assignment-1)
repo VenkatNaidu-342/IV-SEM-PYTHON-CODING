@@ -1,0 +1,40 @@
+class Employee:
+    def getdata(self, eno, ename, designation, basic, hra, da, ta):
+        self.eno = eno
+        self.ename = ename
+        self.designation = designation
+        self.basic = basic
+        self.hra = hra
+        self.da = da
+        self.ta = ta
+        
+    def putdata(self):
+        print('Employee no :',self.eno)
+        print('Employee name :',self.ename)
+        print('Employee Designation :',self.designation)
+        print('Basic salary of the employee :',self.basic)
+        print('House Rent Allowance :',self.hra)
+        print('Dearness Allowance :',self.da)
+        print('Travel Allowance :',self.ta)
+        netsalary = self.eno + self.ename + self.designation + self.basic + self.hra + self.da + self.ta
+        print('Net Salary :',netsalary)
+        if netsalary > 50000:
+            tax = netsalary * 0.05
+        elif netsalary > 35000:
+            tax = netsalary * 0.03
+        elif netsalary > 20000:
+            tax = netsalary * 0.01
+        else:
+            tax = 0
+        print('Tax :',tax)
+
+e = Employee()
+eno = int(input())
+ename = input()
+designation = input()
+basic = input()
+hra = input()
+da = input()
+ta = input()
+e.getdata(eno, ename, designation, basic, hra, da, ta)
+e.putdata()
